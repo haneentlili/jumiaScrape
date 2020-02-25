@@ -6,3 +6,4 @@ class JumiaprojectItem(scrapy.Item):
     image = scrapy.Field()
     title = scrapy.Field()
     discount = scrapy.Field()
+    category =  scrapy.Field()

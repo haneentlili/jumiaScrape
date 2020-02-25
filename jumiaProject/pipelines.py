@@ -29,5 +29,5 @@ class JumiaprojectPipeline(object):
         self.client.close()
         
     def process_item(self, item, spider):
-        self.db[self.collection_name].update_one({'_id': dict(item)['_id']}, {"$set":{'price':dict(item)['price'],'oldprice':dict(item)['oldprice'],'image':dict(item)['image'],'title':dict(item)['title'],'discounts':dict(item)['discount']}}, upsert=True)
+        self.db[self.collection_name].update_one({'_id': dict(item)['_id']}, {"$set":{'price':dict(item)['price'],'oldprice':dict(item)['oldprice'],'image':dict(item)['image'],'title':dict(item)['title'],'discounts':dict(item)['discount'],'categoty':dict(item)['category']}}, upsert=True)
 

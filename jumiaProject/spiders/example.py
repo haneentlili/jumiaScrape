@@ -1,3 +1,4 @@
+
 from __future__ import absolute_import
 import scrapy
 
@@ -7,7 +8,10 @@ class ExampleSpider(scrapy.Spider):
     name = 'jumia'
     def __init__(self, category=None, *args, **kwargs):
         super(ExampleSpider, self).__init__(*args, **kwargs)
+        global cat
+        cat = category
         self.start_urls = ['https://www.jumia.com.tn/%s' % category]
+       
     allowed_domains = ['jumia.com.tn']
     
 
@@ -35,4 +39,5 @@ class ExampleSpider(scrapy.Spider):
             item['oldprice'] = p[5]
             item['discount'] = p[2]
             item['image'] = p[3]
+            item['category'] = cat
             yield item
